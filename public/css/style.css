@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+
+:root {
+    --backgroundColor: #212121;
+    --barelyLighterBackgroundColor: #1c1c1c;
+    --lighterBackgroundColor: #2f2f2f;
+    --darkerBackgroundColor: #1a1a1a;
+    --textColor: #fff;
+
+    --borderColor: #fff;
+
+    --buttonColor: #2f4f4f;
+    --buttonHoverColor: #162424;
+
+    --inputBackgroundColor: #f0f0f0;
+    --inputHoverColor: #c5c5c5;
+
+    --removeButtonColor: #ff0000;
+    --removeButtonHoverColor: #cd0000;
+
+    --mainNotificationColor: #189618;
+
+    --changedFieldColor: #ffa500;
+}
+
+body {
+    background: var(--backgroundColor);
+    /* background: radial-gradient(circle, #000 0%,   #0d0343 100%); */
+
+    color: var(--textColor);
+
+    font-size: 18px;
+    font-family: "Kode Mono";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+
+    height: auto;
+    min-height: calc(100vh  - 4rem); /* To make space for the footer */
+    padding: 0;
+    padding-bottom: 4rem; /* To make space for the footer */
+    margin: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.darkInput {
+    background: var(--lighterBackgroundColor) !important;
+    color: #fff;
+
+    font-family: "Kode Mono";
+
+    padding-left: .35rem;
+    border: none;
+    border-radius: .2rem;
+    margin: 0;
+}
+
+.changedFieldText {
+    color: var(--changedFieldColor) !important;
+}
+
+.changedFieldBorder {
+    outline: .1rem solid orange;
+    border-radius: .3rem;
+}
+
+.button {
+    background: var(--buttonColor);
+    color: var(--textColor);
+
+    text-align: center;
+
+    cursor:pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: .4rem;
+
+    padding: .4rem;
+    border-radius: .1rem;
+}
+
+.button:hover {
+    background: var(--buttonHoverColor);
+}
+
+.hiddenLink {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+/* ------ RESET ------ */
+
+p {
+    margin: 0;
+}
+
+/* ------ OPTIONS MENU ------ */
+.optionsMenu {
+    background: none;
+
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    width: auto;
+    padding: 1rem;
+    margin: 0;
+}
+
+
+.optionsMenu>a {
+    text-decoration: none;
+}
+
+.optionsButton img {
+    vertical-align: middle;
+}
+
+
+/* ------ POPUP WINDOW ------ */
+
+.popupWindow{
+    background: var(--darkerBackgroundColor);
+    background: radial-gradient(circle, #1d1a2d 0%,  #1d1a2d 50%, #000000 100%);
+
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+
+    max-width: 85vw;
+    max-height: 85vh;
+    
+    height: 14rem;
+    width: 20.5rem;
+    padding: 2rem;
+
+    outline: 3px solid var(--borderColor);
+    border-radius: 1rem;
+
+    z-index: 1010;
+}
+
+.closeButton {
+    background: grey;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 2rem;
+    height: 2rem;
+    padding: .5rem;
+    border-radius: 0 0 0 .3rem;
+}
+
+.closeButton:active {
+    transform: scale(0.95);
+}
+
+.closeButton img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.headerMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    width: auto;
+}
+
+
+ /* LOGIN DIV */
+
+ .shadowBox {
+    background: #00000092;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1001;
+ }
+
+ .credentialsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.credentialsDiv .loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    width: max-content;
+}
+
+.submitLoginButton {
+    margin-top: 1.2rem;
+    text-align: center; 
+    justify-content: center;
+}
+
+.accountbuttonDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.saveAccountCredentials {
+    background-color: var(--lighterBackgroundColor);
+
+    cursor: default;
+}
+
+.accountInputChanged {
+    background: var(--mainNotificationColor) !important;
+    border-radius: .3rem;
+
+    cursor: pointer;
+}
+
+
+/* ------ NOTIFICATION ------ */
+
+.notification {
+    text-align: center;
+
+    position: absolute;
+    top: -100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 80%;
+    padding-bottom: .25rem;
+    margin: 0;
+
+    transition: all .5s ease-in-out;
+}
+
+.activeNotification {
+    top: 0rem;
+    
+    transition: all .5s ease-in-out;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .optionsMenu {
+        background: inherit;
+
+        flex-direction: column;
+        justify-content: center;
+
+        width: 100%;
+
+        transition: all .5s ease-in-out;
+    }
+
+    .openOptionsMenu {
+        background: var(--backgroundColor);
+        top: 0 !important;
+        
+        transition: all .5s ease-in-out;
+    }
+
+    .optionsButton {
+        width: 60%; /* Make each item take up the full width */
+    }
+
+    .optionsMenu::after {
+        content: ""; 
+        background-image: url("../img/icons/expand.svg");
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center bottom; 
+
+        text-align: center;
+
+        vertical-align: middle;
+
+        width: 30%;
+        height: 2rem;
+        margin-inline: auto;
+        margin-top: 1rem;
+    }
+}

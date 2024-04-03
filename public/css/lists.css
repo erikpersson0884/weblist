@@ -1,0 +1,60 @@
+
+body {
+    justify-content: flex-start;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    padding: 1rem;
+}
+
+.listHeader {
+    justify-content: space-between;
+}
+
+.listMenu, .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    width: 50vw;
+}
+
+.listMenuElement, .listElement {
+    background: var(--lighterBackgroundColor);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    width: 100%;
+    padding: 1rem;
+}
+
+.listHeader .backButton {
+    cursor: pointer;
+}
+
+.listElement {
+    background: var(--lighterBackgroundColor);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+
+
+img {
+    filter: invert(1);
+}
